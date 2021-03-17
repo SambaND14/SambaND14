@@ -11,7 +11,7 @@ public class Classe {
         this.id = id;
         this.libelle = libelle;
         this.matieres = matieres;
-    }
+
 
 
     public int getId() {
@@ -26,3 +26,4 @@ public class Classe {
         return matieres;
     }
 }
+
