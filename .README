@@ -1,27 +1,21 @@
 DESCRIPTION
-Plateforme pour service à la demande qui met en relation des  clients et des prestataires.
-Les clients peuvent contracter en ligne avec un prestataire, et le noter après service fait. 
+Projet qui consiste à reproduire une interface pour les étudiants 
+et professeurs afin qu'ils accèdent à leurs notes,
+que les profs puissent en rajouter et ou les modifier....
 
 PROFILS UTILISATEUR
-Client
-Prestataire
-Administrateur de la plateforme
+Etudient
 
 FONCTIONNALITES/PROFIL
-*client*
--créer un compte
--rechercher les services listés
--afficher les prestataires d'un type de service
--choisir un prestataire
--proposer un contrat à un prestataire
--noter un prestataire
-
-*prestataire*
--créer un compte
--s'enregistrer comme prestataire d'un service
--accepter un contrat
+*etudient*
+-inscrire
+-connecter
+-rechercher
+-choisir une filiere
+-afficher note
+-Deconnecter
 
 *administrateur*
--bloquer un utilisateur
--créer un service
--notifier un utilisateur
+-bloquer un etudient
+-créer un compte
+-inserer les notes
