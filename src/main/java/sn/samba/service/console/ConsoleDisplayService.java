@@ -1,10 +1,7 @@
 package sn.samba.service.console;
 
-import sn.samba.domain.DetailPrestation;
+import sn.samba.domain.Classe;
 import sn.samba.domain.Eleve;
-import sn.samba.domain.Prestataire;
-import sn.samba.domain.Prestation;
-import sn.samba.repository.DetailPrestationRepository;
 import sn.samba.service.DisplayService;
 
 public class ConsoleDisplayService implements DisplayService {
@@ -28,6 +25,12 @@ public class ConsoleDisplayService implements DisplayService {
 
     }
 
+    @Override
+    public void afficherClasse(Classe classe, Classe[] classes) {
+
+    }
+
+
     public void afficherELeve(Eleve[] eleves) {
         System.out.println("Les eleves sont:");
         for (int i = 0; i < eleves.length; i++) {
@@ -36,29 +39,11 @@ public class ConsoleDisplayService implements DisplayService {
         }
     }
 
-    public void afficherPrestataires(Prestation prestation, Prestataire[] prestataires) {
-        System.out.println(String.format("La liste des prestataires %s :", prestation.getNom()));
-        for (int i = 0; i < prestataires.length; i++) {
-            Prestataire prestataire = prestataires[i];
-            System.out.println(String.format("> %s %s %s", prestataire.getId(), prestataire.getPrenom(), prestataire.getNom()));
-        }
+    @Override
+    public void afficherDetailsPrestation() {
+
     }
 
-    public void afficherDetailsPrestation() {
-        System.out.println("Les détails des prestations de Alassane Sene : ");
-        DetailPrestation[] detailPrestations = detailPrestationRepository.getAll();
-        for (int i = 0; i <detailPrestations.length; i++) {
-            DetailPrestation detailPrestation = detailPrestations[i];
-            System.out.println(
-                    String.format(
-                            "> %s %s : %s",
-                            detailPrestation.getId(),
-                            detailPrestation.getDetails(),
-                            detailPrestation.getPrix()
-                    )
-            );
-        }
-    }
 
     public void afficherDetailsContrat() {
         System.out.println("Prestation Alassane Sene: Course Dakar 2500 ");

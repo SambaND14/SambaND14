@@ -1,7 +1,6 @@
 package sn.samba.repository.jdbc;
 
 
-import sn.samba.domain.Prestation;
 import sn.samba.repository.PrestationRepository;
 
 import java.sql.*;

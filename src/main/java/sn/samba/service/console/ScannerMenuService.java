@@ -1,7 +1,6 @@
 package sn.samba.service.console;
 
 import sn.samba.domain.Eleve;
-import sn.samba.domain.Prestataire;
 import sn.samba.repository.EleveRepository;
 import sn.samba.service.DisplayService;
 import sn.samba.service.MenuService;

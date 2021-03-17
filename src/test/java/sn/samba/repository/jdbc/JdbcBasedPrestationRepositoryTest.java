@@ -3,7 +3,6 @@ package sn.samba.repository.jdbc;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import sn.samba.domain.Prestation;
 
 import java.sql.*;
 

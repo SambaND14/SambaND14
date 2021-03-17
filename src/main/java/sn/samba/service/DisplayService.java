@@ -1,8 +1,6 @@
 package sn.samba.service;
 
 import sn.samba.domain.Eleve;
-import sn.samba.domain.Prestataire;
-import sn.samba.domain.Prestation;
 
 public interface DisplayService {
     void afficherBienvenu();
