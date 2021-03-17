@@ -4,5 +4,8 @@ import sn.samba.domain.Eleve;
 
 public interface EleveRepository {
     Eleve[] getAll();
-    Eleve getById(int id);
+
+    static Eleve getById(int id) {
+        return null;
+    }
 }

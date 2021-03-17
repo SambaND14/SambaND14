@@ -1,6 +1,7 @@
 package sn.samba.service.console;
 
 import sn.samba.domain.DetailPrestation;
+import sn.samba.domain.Eleve;
 import sn.samba.domain.Prestataire;
 import sn.samba.domain.Prestation;
 import sn.samba.repository.DetailPrestationRepository;
@@ -15,18 +16,23 @@ public class ConsoleDisplayService implements DisplayService {
     }
 
     public void afficherBienvenu() {
-        System.out.println("Bienvenu sur la plateforme service à la demande!");
+        System.out.println("Bienvenu sur la plateforme des Notes de ISI!");
     }
 
     public void afficherMenuPrincipal() {
-        System.out.println("> l pour lister les services disponibles ");
+        System.out.println("> l pour lister les Eleve ");
     }
 
-    public void afficherListeServices(Prestation[] prestations) {
-        System.out.println("Les services disponibles sont:");
-        for (int i = 0; i < prestations.length; i++) {
-            Prestation prestation = prestations[i];
-            System.out.println(String.format("> %s %s", prestation.getId(), prestation.getNom()));
+    @Override
+    public void afficherListeServices(Eleve[] prestations) {
+
+    }
+
+    public void afficherELeve(Eleve[] eleves) {
+        System.out.println("Les eleves sont:");
+        for (int i = 0; i < eleves.length; i++) {
+            Eleve eleve = eleves[i];
+            System.out.println(String.format("> %s %s", eleve.getId(), eleve.getNomComplet()));
         }
     }
 

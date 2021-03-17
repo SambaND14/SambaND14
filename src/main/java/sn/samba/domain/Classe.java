@@ -1,18 +1,15 @@
 package sn.samba.domain;
 
-import java.util.List;
-
 public class Classe {
     private int id;
     private String libelle;
-    private List<Matiere> matieres;
+    private String matiere ;
 
-    public Classe(int id, String libelle, List<Matiere> matieres) {
+    public Classe(int id, String libelle, String matiere) {
         this.id = id;
         this.libelle = libelle;
-        this.matieres = matieres;
-
-
+        this.matiere = matiere;
+    }
 
     public int getId() {
         return id;
@@ -22,8 +19,7 @@ public class Classe {
         return libelle;
     }
 
-    public List<Matiere> getMatieres() {
-        return matieres;
+    public String getMatiere() {
+        return matiere;
     }
 }
-

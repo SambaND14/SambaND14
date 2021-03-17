@@ -1,9 +1,8 @@
 package sn.samba.service.console;
 
+import sn.samba.domain.Eleve;
 import sn.samba.domain.Prestataire;
-import sn.samba.domain.Prestation;
-import sn.samba.repository.PrestataireRepository;
-import sn.samba.repository.PrestationRepository;
+import sn.samba.repository.EleveRepository;
 import sn.samba.service.DisplayService;
 import sn.samba.service.MenuService;
 
@@ -12,11 +11,13 @@ import java.util.Scanner;
 public class ScannerMenuService implements MenuService {
     private final DisplayService displayService;
     private final Scanner scanner;
-    private final PrestationRepository prestationRepository;
+    private final EleveRepository eleveRepository;
     private final PrestataireRepository prestataireRepository;
 
-    public ScannerMenuService(DisplayService displayService, PrestationRepository prestationRepository, PrestataireRepository prestataireRepository) {
+
+    public ScannerMenuService(DisplayService displayService, PrestationRepository prestationRepository, EleveRepository eleveRepository, PrestataireRepository prestataireRepository) {
         this.displayService = displayService;
+        this.eleveRepository = eleveRepository;
         this.prestataireRepository = prestataireRepository;
         this.scanner = new Scanner(System.in);
         this.prestationRepository = prestationRepository;
@@ -28,17 +29,17 @@ public class ScannerMenuService implements MenuService {
     }
 
     private void afficherMenu( String choix) {
-        Prestation[] prestations = prestationRepository.getAll();
+        Eleve[] eleves= EleveRepository.getAll();
         if("l".equalsIgnoreCase(choix)){
-            displayService.afficherListeServices(prestations);
+            displayService.afficherListeServices(eleves);
             int idPrestation = scanner.nextInt();
 
-            //get prestation by id
-            Prestation prestation = prestationRepository.getById(idPrestation);
+            //get eleve by id
+            Eleve eleve = EleveRepository.getById(int Id);
             //get prestataires by prestation
-            Prestataire[] prestataires = prestataireRepository.getAllByPrestation(prestation);
+            Prestataire[] prestataires = prestataireRepository.getAllByPrestation(Eleve);
             //afficher les prestataires qui fournissent ce service
-            displayService.afficherPrestataires(prestation, prestataires);
+            displayService.afficherPrestataires(Eleve, prestataires);
 
             int idPrestataire = scanner.nextInt();
             Prestataire prestataire = prestataireRepository.findById(idPrestataire);

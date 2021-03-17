@@ -30,7 +30,7 @@ public class ClientController {
         displayService = new ConsoleDisplayService(detailPrestationRepository);
         PrestationRepository prestationRepository = new JdbcBasedPrestationRepository(dataSource);
         PrestataireRepository prestataireRepository = new ListBasedPrestataireRepository();
-        scannerMenuService = new ScannerMenuService(displayService, prestationRepository, prestataireRepository );
+        scannerMenuService = new ScannerMenuService(displayService, prestationRepository, eleveRepository, prestataireRepository );
     }
 
     public void process(){

@@ -1,5 +1,6 @@
 package sn.samba.service.web;
 
+import sn.samba.domain.Eleve;
 import sn.samba.domain.Prestataire;
 import sn.samba.domain.Prestation;
 import sn.samba.service.DisplayService;
@@ -14,7 +15,7 @@ public class WebDisplayService implements DisplayService {
 
     }
 
-    public void afficherListeServices(Prestation[] prestations) {
+    public void afficherListeServices(Eleve[] prestations) {
 
     }
 
