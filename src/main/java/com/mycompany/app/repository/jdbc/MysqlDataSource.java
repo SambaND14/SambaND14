@@ -7,7 +7,7 @@ import java.sql.DriverManager;
 public class MysqlDataSource implements DataSource {
     public static final String DB_USER = "root";
     public static final String DB_PASSWORD = "";
-    public static final String NOM_BASE = "gestionnotemgl1";
+    public static final String NOM_BASE = "jeesamba";
 
     public static final String IP = "localhost";
     public static final String PORT = "3306";
