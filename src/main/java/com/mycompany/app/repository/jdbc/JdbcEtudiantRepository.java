@@ -7,7 +7,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class JdbcEtudiantRepository implements  EtudiantRepository{
+public class JdbcEtudiantRepository implements JdbcEtudiantRepository {
     private DataSource dataSource;
 
     public JdbcEtudiantRepository(DataSource dataSource) {
@@ -42,7 +42,36 @@ public class JdbcEtudiantRepository implements  EtudiantRepository{
     }
 
     @Override
-    public int update(Etudiant etudiant ) {
+    public int addNotes(Etudiant etudiant) {
+        int ok = 0;
+        String query = "INSERT INTO etudiant (nom,prenom,tel,id_classe) VALUES(?,?,?,?)";
+        try {
+
+            Connection connection = dataSource.createConnection();
+            PreparedStatement statement = connection.prepareStatement(query);
+
+            statement.setString(1,etudiant.getNom());
+            statement.setString(2, etudiant.getPrenom());
+            statement.setString(3, etudiant.getTel());
+            statement.setInt(4, 6);
+
+            ok = statement.executeUpdate();
+
+            if (ok > 0) {
+                System.out.println("etudiant créé avec succés!");
+            }
+            return ok;
+        }
+        catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return 0;
+    }
+
+
+
+    @Override
+    public int update(Etudiant etudiant) {
         String query = "UPDATE  user SET nom=?, prenom=?, tel=?  ,id_classe=? where id=?";
         int ok = 0;
         try {
@@ -132,6 +161,7 @@ public class JdbcEtudiantRepository implements  EtudiantRepository{
         }
     }
 
+    @Override
     public Classe getClaById(int idC) throws Exception {
         String query = "SELECT idC, libelle, matiere1,matiere2,matiere3,matiere4,matiere5, from classe where idC = ?";
         try {

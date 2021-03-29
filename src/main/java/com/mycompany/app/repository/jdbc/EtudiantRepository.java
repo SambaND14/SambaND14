@@ -2,6 +2,7 @@ package com.mycompany.app.repository.jdbc;
 
 import com.mycompany.app.domain.Classe;
 import com.mycompany.app.domain.Etudiant;
+import com.mycompany.app.domain.Notes;
 
 public interface EtudiantRepository {
     int add(Etudiant etudiant);

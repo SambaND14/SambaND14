@@ -5,7 +5,6 @@ import com.mycompany.app.repository.jdbc.EtudiantRepository;
 import com.mycompany.app.repository.jdbc.JdbcEtudiantRepository;
 import com.mycompany.app.repository.jdbc.MysqlDataSource;
 import com.mycompany.app.service.DisplayeEtudiant;
-import com.mycompany.app.service.MenuEtudiant;
 import com.mycompany.app.service.console.ConsoleDisplayEtudiant;
 import com.mycompany.app.service.console.ScannerMenuEtudiant;
 
@@ -16,7 +15,7 @@ public class EtudiantController {
     public EtudiantController() {
         displayeEtudiant = new ConsoleDisplayEtudiant();
         DataSource dataSource = new MysqlDataSource();
-        EtudiantRepository etudiantRepository = new JdbcEtudiantRepository(dataSource) ;
+        EtudiantRepository etudiantRepository = (EtudiantRepository) new JdbcEtudiantRepository(dataSource);
         scannerMenuEtudiant = new ScannerMenuEtudiant(etudiantRepository,displayeEtudiant);
 
     }
