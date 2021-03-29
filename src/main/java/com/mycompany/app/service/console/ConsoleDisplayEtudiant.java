@@ -12,7 +12,7 @@ import java.util.Scanner;
 
 public class ConsoleDisplayEtudiant implements DisplayeEtudiant {
    DataSource dataSource = new MysqlDataSource();
-   private EtudiantRepository etudiantRepository = (EtudiantRepository) new JdbcEtudiantRepository(dataSource);
+   private EtudiantRepository etudiantRepository = new JdbcEtudiantRepository(dataSource);
 
     @Override
     public void afficherBienvenu() {
