@@ -58,4 +58,5 @@ public class Etudiant {
     public void setId_classe(Classe id_classe) {
         this.id_classe = id_classe;
     }
+
 }

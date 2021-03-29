@@ -79,14 +79,15 @@ public class ConsoleDisplayEtudiant implements DisplayeEtudiant {
         System.out.println("entrer le nom");
         etudiant.setNom(sc.nextLine());
         System.out.println("-------------------------");
-        System.out.println("entrer la prenom");
+        System.out.println("entrer le prenom");
         etudiant.setPrenom(sc.nextLine());
         System.out.println("-------------------------");
         System.out.println("entrer le tel");
         etudiant.setTel(sc.nextLine());
         System.out.println("-------------------------");
         System.out.println("entrer l'id de la classe");
-        // etudiant.setId_classe(sc.nextInt());
+      //  etudiant.setId_classe(sc.nextInt());
+
         return  etudiant;
     }
 

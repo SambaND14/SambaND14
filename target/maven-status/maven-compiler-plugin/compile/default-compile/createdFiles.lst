@@ -6,6 +6,7 @@ com\mycompany\app\controller\EtudiantController.class
 com\mycompany\app\service\DisplayeEtudiant.class
 com\mycompany\app\service\console\ConsoleDisplayEtudiant.class
 com\mycompany\app\domain\Classe.class
+com\mycompany\app\domain\Notes.class
 com\mycompany\app\repository\jdbc\DataSource.class
 com\mycompany\app\repository\jdbc\JdbcEtudiantRepository.class
 com\mycompany\app\repository\jdbc\EtudiantRepository.class

@@ -26,7 +26,7 @@ public class JdbcEtudiantRepository implements  EtudiantRepository{
             statement.setString(1,etudiant.getNom());
             statement.setString(2, etudiant.getPrenom());
             statement.setString(3, etudiant.getTel());
-            statement.setInt(4, 6);
+            statement.setInt(4, 2);
 
             ok = statement.executeUpdate();
 
@@ -43,7 +43,7 @@ public class JdbcEtudiantRepository implements  EtudiantRepository{
 
     @Override
     public int update(Etudiant etudiant ) {
-        String query = "UPDATE  user SET nom=?, prenom=?, tel=?  ,id_classe=? where id=?";
+        String query = "UPDATE  user SET id=? ,nom=?, prenom=?, tel=?   where id=?";
         int ok = 0;
         try {
 
@@ -52,8 +52,8 @@ public class JdbcEtudiantRepository implements  EtudiantRepository{
             statement.setString(1,etudiant.getNom());
             statement.setString(2, etudiant.getPrenom());
             statement.setString(3, etudiant.getTel());
-            statement.setInt(4, etudiant.getId_classe().getId());
-            statement.setInt(5, etudiant.getId());
+           // statement.setInt(4, etudiant.getId_classe().getId());
+            statement.setInt(4, etudiant.getId());
             ok = statement.executeUpdate();
 
             System.out.println(statement);
